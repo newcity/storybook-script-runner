@@ -31,6 +31,7 @@ const buttonFromPureComponent = await ButtonPureComponent({
   color: 'rose'
 });
 
+// helper for argTypes and type-alias
 const fooMakerOptions = ['bar', 'baz'] as const;
 
 // the actual story
