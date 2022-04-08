@@ -1,0 +1,41 @@
+{
+  "name": "storybook-twing-and-javascript-demo",
+  "version": "0.1.1",
+  "scripts": {
+    "build-js": "npx babel components --extensions '.js','.ts' --ignore 'components/**/*.stories.js','components/**/*.stories.ts' --config-file ./.babelrc.config.js --out-dir dist/components",
+    "watch-js": "onchange -i 'components/**/*.js' 'components/**/*.ts' -e 'components/**/*.stories.js' 'components/**/*.stories.ts' -- npm run build-js",
+    "build-css": "postcss global-styles/**/*.css --base global-styles --dir dist/global-styles --verbose",
+    "watch-css": "onchange -i 'global-styles/**/*.css' 'tailwind.config.js' 'components/**' -- npm run build-css",
+    "start": "concurrently \"npm run watch-js\" \"npm run watch-css\" \"start-storybook -p 3000\"",
+    "build": "npm run build-js && npm run build-css && build-storybook"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.8",
+    "@babel/preset-typescript": "^7.16.7",
+    "@storybook/addon-a11y": "^6.4.20",
+    "@storybook/addon-essentials": "^6.4.20",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/builder-webpack5": "^6.4.20",
+    "@storybook/html": "^6.4.20",
+    "@storybook/manager-webpack5": "^6.4.20",
+    "autoprefixer": "^10.4.4",
+    "babel-plugin-iife-wrap": "^1.1.0",
+    "babel-plugin-transform-remove-export": "^1.0.0",
+    "babel-preset-minify": "^0.5.1",
+    "buffer": "^6.0.3",
+    "chroma-js": "^2.4.2",
+    "chromatic": "^6.5.3",
+    "concurrently": "^7.1.0",
+    "cssnano": "^5.1.7",
+    "onchange": "^7.1.0",
+    "postcss": "^8.4.12",
+    "postcss-cli": "^9.1.0",
+    "postcss-import": "^14.1.0",
+    "postcss-import-ext-glob": "^2.0.1",
+    "tailwindcss": "^3.0.23",
+    "twing": "^5.1.1",
+    "twing-loader": "^4.0.0",
+    "typescript": "^4.6.3"
+  }
+}

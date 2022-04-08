@@ -1,0 +1,9 @@
+/*
+  We're using Tailwind, so will rarely have need for pattern-level CSS,
+  but it's available if needed. This isn't a CSS "module," and it will
+  automatically be incorporated into the global `tailwind.css`.
+*/
+
+.example-css-test {
+  @apply text-red-600;
+}

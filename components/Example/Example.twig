@@ -1,0 +1,32 @@
+<div class="space-y-4 p-4">
+  <div class="example-css-test">
+    If I'm red, then pattern-level CSS is working.
+    Check the console to confirm that pattern-level JS is working.
+  </div>
+
+  <div>Foo: {{ foo }}</div>
+
+  <div>
+    {% include '../Button/Button.twig' with {
+      text: 'Button 1'
+    } only %}
+  </div>
+
+  <div>
+    {% include '../Button/Button.twig' with {
+      text: 'Button 2'
+    } only %}
+  </div>
+
+  {% if button3 %}
+    <div>{{ button3 }}</div>
+  {% endif %}
+
+  {% if button4 %}
+    <div>{{ button4 }}</div>
+  {% endif %}
+
+  {% if button5 %}
+    <div>{{ button5 }}</div>
+  {% endif %}
+</div>
