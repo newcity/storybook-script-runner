@@ -24,8 +24,6 @@
     "babel-plugin-transform-remove-export": "^1.0.0",
     "babel-preset-minify": "^0.5.1",
     "buffer": "^6.0.3",
-    "chroma-js": "^2.4.2",
-    "chromatic": "^6.5.3",
     "concurrently": "^7.1.0",
     "cssnano": "^5.1.7",
     "onchange": "^7.1.0",
