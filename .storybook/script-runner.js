@@ -33,6 +33,10 @@ if (module.hot) {
       if (!freshScriptModules.has(key)) scriptModules.delete(key);
     }
 
+    const twigImports = require.context('/components', true, /\.twig$/);
+    const twigKeys = twigImports.keys();
+    module.hot.accept(twigImports.id);
+
     for (const [key, scriptModule] of freshScriptModules) {
       if (scriptModules.get(key) === scriptModule) continue;
 
@@ -46,8 +50,8 @@ if (module.hot) {
       module.hot.accept(twigImports.id);
 
       const candidateTwigKey = key.replace(/(?:j|t)s$/, 'twig');
+      const twigKey = twigKeys.find((e) => e === candidateTwigKey);
 
-      const twigKey = twigImports.keys().find((e) => e === candidateTwigKey);
       if (!twigKey) continue;
 
       const twigPath = twigKey.slice(1);
