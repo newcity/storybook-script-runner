@@ -8,7 +8,7 @@ module.exports = (api) => {
   const isProduction = api.env('production');
 
   const presets = [
-    ...(isProduction ? ['minify'] : ''),
+    ...(isProduction ? ['minify'] : []),
     '@babel/preset-typescript',
   ];
 
